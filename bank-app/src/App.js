@@ -49,7 +49,7 @@ function resetTransaction(){
   }, []);
 
   return (
-    <div className="container p-5">
+    <div className="container p-5 app" >
       <header>
         <h1>FlatironBankApp</h1>
       </header>
