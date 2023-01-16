@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function SearchBar() {
-    const [query,setQuery] =useState(" ");
+  const [query, setQuery] = useState("");
 
-    function handleClick(event){
-       setQuery((q) => {q=event.target.value}) 
-
-    }
+  function handleClick(event) {
+    event.preventDefault()
+    console.log(query)
+  }
   return (
     <div className="input-group mb-3">
-    <input type="text" className="form-control" placeholder="Search transaction by category or description" aria-label="Seatch transaction" aria-describedby="basic-addon2" />
-    <div className="input-group-append">
-      <button className="btn btn-primary" type="button">Search</button>
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        type="text"
+        className="form-control"
+        placeholder="Search transaction by category or description"
+        aria-label="Seatch transaction"
+        aria-describedby="basic-addon2"
+      />
+      <div className="input-group-append">
+        <button onClick={handleClick} className="btn btn-primary" type="button">
+          Search
+        </button>
+      </div>
     </div>
-  </div>
   );
 }
 export default SearchBar;
