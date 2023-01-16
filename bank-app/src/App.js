@@ -14,6 +14,18 @@ function App() {
         setTransactions(newList)
       });
   }
+
+function resetTransaction(){
+  
+    fetch("http://localhost:3004/transactions")
+      .then((req) => req.json())
+      .then((data) => {
+        setTransactions(data)
+        // console.log(data);
+      });
+  };
+
+
   
   useEffect(() => {
     fetch("http://localhost:3004/transactions")
@@ -29,7 +41,7 @@ function App() {
       <header>
         <h1>FlatironBankApp</h1>
       </header>
-      <SearchBar onSearchQuery={query => filterTransaction(query)}/>
+      <SearchBar onSearchQuery={query => filterTransaction(query)} onHandleReset={resetTransaction}/>
       <Table transactions={transactions}/>
     </div>
   );
