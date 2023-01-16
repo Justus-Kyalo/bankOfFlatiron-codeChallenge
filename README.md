@@ -1,4 +1,4 @@
-[]
+[https://github.com/RemmyKyalo/bankOfFlatiron-codeChallenge/tree/main/image]
 # FlatironBankApp
 This is a simple React app that allows users to view, search, and add bank transactions to a table. The app is built with the following features:
 
@@ -18,4 +18,4 @@ React - A JavaScript library for building user interfaces
 json-server - A simple way to set up a RESTful API
  # Author
 
-[JUstus Kyalo mbinya]
+[Jugstus Kyalo mbinya]
