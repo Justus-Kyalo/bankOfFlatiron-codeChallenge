@@ -19,7 +19,7 @@ function SearchBar({onSearchQuery ,onHandleReset} ) {
         onChange={(e) => setQuery(e.target.value)}
         type="text"
         className="form-control"
-        placeholder="Search transaction by category or description"
+        placeholder="Search transaction by category "
         aria-label="Seatch transaction"
         aria-describedby="basic-addon2"
       />
