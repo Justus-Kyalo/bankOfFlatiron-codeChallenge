@@ -7,6 +7,10 @@ function Form({ onSubmitForm }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    if(category ==="" || amount=== "" || description ===""){
+        alert("please fill the form")
+        return;
+    }
 
     const data = {
       category,
