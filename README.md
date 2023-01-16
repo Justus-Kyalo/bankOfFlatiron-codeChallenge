@@ -20,4 +20,4 @@
 - json-server: A simple way to set up a RESTful API
  # Author
 
-[Jugstus Kyalo mbinya]
+[Justus Kyalo mbinya]
