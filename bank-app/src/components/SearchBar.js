@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-function SearchBar() {
+function SearchBar({onSearchQuery}) {
   const [query, setQuery] = useState("");
 
   function handleClick(event) {
     event.preventDefault()
-    console.log(query)
+    onSearchQuery(query)
+  }
+  function handleReset(){
+    
   }
   return (
     <div className="input-group mb-3">
@@ -22,6 +25,10 @@ function SearchBar() {
         <button onClick={handleClick} className="btn btn-primary" type="button">
           Search
         </button>
+        <button onClick={handleReset} className="btn btn-primary" type="button">
+          reset
+        </button>
+
       </div>
     </div>
   );
