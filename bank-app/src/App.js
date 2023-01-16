@@ -4,14 +4,23 @@ import SearchBar from "./components/SearchBar";
 import { React, useEffect ,useState} from "react";
 
 function App() {
-  const [transactions, setTransactions] =useState([])
+  const [transactions, setTransactions] = useState([])
+
+  function filterTransaction(query){
+    fetch("http://localhost:3004/transactions")
+      .then((req) => req.json())
+      .then((data) => {
+        const newList = data.filter(transaction => transaction.category.toLowerCase().includes(query.toLowerCase()));
+        setTransactions(newList)
+      });
+  }
   
   useEffect(() => {
     fetch("http://localhost:3004/transactions")
       .then((req) => req.json())
       .then((data) => {
         setTransactions(data)
-        console.log(data);
+        // console.log(data);
       });
   }, []);
 
@@ -20,7 +29,7 @@ function App() {
       <header>
         <h1>FlatironBankApp</h1>
       </header>
-      <SearchBar />
+      <SearchBar onSearchQuery={query => filterTransaction(query)}/>
       <Table transactions={transactions}/>
     </div>
   );
