@@ -7,8 +7,8 @@ function Table({ transactions }) {
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">category</th>
             <th scope="col">description</th>
+            <th scope="col">category</th>
             <th scope="col">amount</th>
             <th scope="col">date</th>
           </tr>
@@ -17,8 +17,8 @@ function Table({ transactions }) {
           {transactions.map((transaction) => (
             <tr key={transaction.id} >
               <th scope="row">{transaction.id}</th>
-              <td>{transaction.category}</td>
               <td>{transaction.description}</td>
+              <td>{transaction.category}</td>
               <td>{transaction.amount}</td>
               <td>{transaction.amount}</td>
             </tr>
