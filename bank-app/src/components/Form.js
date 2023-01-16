@@ -1,36 +1,68 @@
-import React from "react";
+import { React, useState } from "react";
 
-function Form() {
+function Form({ onSubmitForm }) {
+  const [category, setCategory] = useState("");
+  const [amount, setAmount] = useState("");
+  const [description, setDescription] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = {
+      category,
+      description,
+      amount,
+    };
+
+    onSubmitForm(data);
+    setAmount("");
+    setCategory("");
+    setDescription("");
+  }
+
   return (
     <div>
       <form>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Description</label>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput">Description</label>
           <input
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             id="formGroupExampleInput"
             placeholder="description"
           />
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput2">Category</label>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput2">Category</label>
           <input
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             id="formGroupExampleInput2"
             placeholder="enter category"
           />
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput2">Amount</label>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput2">Amount</label>
           <input
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             id="formGroupExampleInput2"
             placeholder="enter amount"
           />
         </div>
+        <button
+          type="button"
+          onClick={handleSubmit}
+          className="btn btn-primary"
+        >
+          submit
+        </button>
       </form>
     </div>
   );
