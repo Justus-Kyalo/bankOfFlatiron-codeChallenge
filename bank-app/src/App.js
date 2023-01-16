@@ -15,6 +15,17 @@ function App() {
         setTransactions(newList)
       });
   }
+  function pushData(data){
+    console.log(data);
+    const largestId = transactions.sort((a, b) => b.id - a.id)[0].id
+    const newTransaction = {
+      ...data,
+      id: largestId + 1,
+      date: new Date(),
+    };
+    const newList = [newTransaction, ...transactions]
+    setTransactions(newList)
+  }
 
 function resetTransaction(){
   
@@ -44,7 +55,7 @@ function resetTransaction(){
       </header>
       
       <SearchBar onSearchQuery={query => filterTransaction(query)} onHandleReset={resetTransaction}/>
-      <Form/>
+      <Form onSubmitForm ={pushData}/>
       <Table transactions={transactions}/>
     </div>
   );
