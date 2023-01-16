@@ -1,5 +1,5 @@
 # FlatironBankApp
-![screenshort](https://github.com/RemmyKyalo/bankOfFlatiron-codeChallenge/tree/main/image/app.png)
+![screenshort](https://github.com/RemmyKyalo/bankOfFlatiron-codeChallenge/blob/main/image/app.png)
 
 This is a simple React app that allows users to view, search, and add bank transactions to a table. The app is built with the following features:
 
