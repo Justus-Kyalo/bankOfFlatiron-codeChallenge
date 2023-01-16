@@ -2,6 +2,7 @@ import "./App.css";
 import Table from "./components/Table";
 import SearchBar from "./components/SearchBar";
 import { React, useEffect ,useState} from "react";
+import Form from "./components/Form";
 
 function App() {
   const [transactions, setTransactions] = useState([])
@@ -41,7 +42,9 @@ function resetTransaction(){
       <header>
         <h1>FlatironBankApp</h1>
       </header>
+      
       <SearchBar onSearchQuery={query => filterTransaction(query)} onHandleReset={resetTransaction}/>
+      <Form/>
       <Table transactions={transactions}/>
     </div>
   );
