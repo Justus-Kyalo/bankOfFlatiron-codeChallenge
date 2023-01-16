@@ -1,5 +1,6 @@
-[https://github.com/RemmyKyalo/bankOfFlatiron-codeChallenge/tree/main/image]
 # FlatironBankApp
+![screenshort](https://github.com/RemmyKyalo/bankOfFlatiron-codeChallenge/tree/main/image/app.png)
+
 This is a simple React app that allows users to view, search, and add bank transactions to a table. The app is built with the following features:
 
 A Search Bar that allows users to filter transactions by category. The search results are fetched from a local json server API at http://localhost:3004/transactions.
