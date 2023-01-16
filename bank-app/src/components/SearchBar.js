@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-function SearchBar({onSearchQuery}) {
+function SearchBar({onSearchQuery ,onHandleReset} ) {
   const [query, setQuery] = useState("");
 
   function handleClick(event) {
     event.preventDefault()
     onSearchQuery(query)
   }
-  function handleReset(){
+  function handleReset(event){
+    event.preventDefault()
+    onHandleReset();
     
   }
   return (
@@ -25,7 +27,7 @@ function SearchBar({onSearchQuery}) {
         <button onClick={handleClick} className="btn btn-primary" type="button">
           Search
         </button>
-        <button onClick={handleReset} className="btn btn-primary" type="button">
+        <button onClick={handleReset} className="btn btn-outline-primary" type="button">
           reset
         </button>
 
