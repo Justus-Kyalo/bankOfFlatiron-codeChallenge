@@ -6,7 +6,7 @@ import Form from "./components/Form";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-
+//filter 
   function filterTransaction(query) {
     fetch(
       "https://remmykyalo.github.io/transactions.json"
@@ -19,6 +19,7 @@ function App() {
         setTransactions(newList);
       });
   }
+
   function pushData(data) {
     console.log(data);
     const largestId = transactions.sort((a, b) => b.id - a.id)[0].id;
