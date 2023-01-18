@@ -4,7 +4,7 @@
 - This is a simple React app that allows users to view, search, and add bank transactions to a table. 
 - The app is built with the following features:
 
-- A Search Bar that allows users to filter transactions by category. The search results are fetched from a local json server API at       "https://github.com/RemmyKyalo/transactions.github.io/blob/main/transactions.json"
+- A Search Bar that allows users to filter transactions by category. The search results are fetched from a local json server API at       "https://remmykyalo.github.io/transactions.json"
 .
 - A Form that allows users to add new transactions to the table. The form data is added to the transaction list and rendered on the DOM in real-time.
 - A Table that displays all the transactions fetched from the json server API or added on submit.
