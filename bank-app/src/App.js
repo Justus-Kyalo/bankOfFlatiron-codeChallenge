@@ -9,11 +9,11 @@ function App() {
 
   function filterTransaction(query) {
     fetch(
-      "https://github.com/RemmyKyalo/transactions.github.io/blob/main/transactions.json"
+      "https://remmykyalo.github.io/transactions.json"
     )
       .then((req) => req.json())
       .then((data) => {
-        const newList = data.filter((transaction) =>
+        const newList = data.transactions.filter((transaction) =>
           transaction.category.toLowerCase().includes(query.toLowerCase())
         );
         setTransactions(newList);
@@ -28,27 +28,27 @@ function App() {
       date: new Date(),
     };
     const newList = [newTransaction, ...transactions];
-    setTransactions(newList);
+    setTransactions(newList.transactions);
   }
 
   function resetTransaction() {
     fetch(
-      "https://github.com/RemmyKyalo/transactions.github.io/blob/main/transactions.json"
+      "https://remmykyalo.github.io/transactions.json"
     )
       .then((req) => req.json())
       .then((data) => {
-        setTransactions(data);
+        setTransactions(data.transactions);
         // console.log(data);
       });
   }
 
   useEffect(() => {
     fetch(
-      "https://github.com/RemmyKyalo/transactions.github.io/blob/main/transactions.json"
+      "https://remmykyalo.github.io/transactions.json"
     )
       .then((req) => req.json())
       .then((data) => {
-        setTransactions(data);
+        setTransactions(data.transactions);
         // console.log(data);
       });
   }, []);
