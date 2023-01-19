@@ -9,11 +9,11 @@ function App() {
 //filter 
   function filterTransaction(query) {
     fetch(
-      "https://remmykyalo.github.io/transactions.json"
+      "https://transactions-api-ta7t.onrender.com/transactions"
     )
       .then((req) => req.json())
       .then((data) => {
-        const newList = data.transactions.filter((transaction) =>
+        const newList = data.filter((transaction) =>
           transaction.category.toLowerCase().includes(query.toLowerCase())
         );
         setTransactions(newList);
@@ -29,27 +29,27 @@ function App() {
       date: new Date(),
     };
     const newList = [newTransaction, ...transactions];
-    setTransactions(newList.transactions);
+    setTransactions(newList);
   }
 
   function resetTransaction() {
     fetch(
-      "https://remmykyalo.github.io/transactions.json"
+      "https://transactions-api-ta7t.onrender.com/transactions"
     )
       .then((req) => req.json())
       .then((data) => {
-        setTransactions(data.transactions);
+        setTransactions(data);
         // console.log(data);
       });
   }
 
   useEffect(() => {
     fetch(
-      "https://remmykyalo.github.io/transactions.json"
+      "https://transactions-api-ta7t.onrender.com/transactions"
     )
       .then((req) => req.json())
       .then((data) => {
-        setTransactions(data.transactions);
+        setTransactions(data);
         // console.log(data);
       });
   }, []);
